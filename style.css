@@ -47,8 +47,8 @@
     flex-direction: column;
     max-width: 20%;
     position: relative;
-    left: 1200px;
-    bottom: 50px;
+    /* left: 1200px;
+    bottom: 50px; */
 }
 .P2{
     display: flex;
@@ -61,11 +61,16 @@
     font-size: large;
 } 
 
-.container {
+/* .container {
     border: solid 10px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-gap: 30px;
+    background-color: whitesmoke;
+  } */
+.container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
     background-color: whitesmoke;
   }
 
@@ -80,3 +85,12 @@
 html {
     background-color: lightblue;
 }
+
+#player-boxes {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px;
+}
+/* .box9 {
+    background-color: red;
+}  this shows me that I can make any of the boxes have its own individual background color.*/ 
