@@ -22,18 +22,25 @@ player1.name = document.getElementById('color1')
 // document.getElementById(column1[1]).style.backgroundColor = "red" either of these methods work to change the color
 
 
+// function move1(){
+//     for (let i = 11; i > column1.length; i--)
+//     if(document.getElementById(column1[i]).style.backgroundColor != null){
+//         document.getElementById(column1[i]).style.backgroundColor = "red" 
+//         } 
+//         console.log(move1())
+//     }  
 function move1(){
-    if(document.getElementById(column1[5]).style.backgroundColor != null)
-    document.getElementById(column1[5]).style.backgroundColor = player1.color
-    } 
-// function name1(){
-//     if(document.getElementById('name1') != null){
-//        let name = document.getElementById('name1').innerText
-//         document.getElementById('label1').innerHTML === name
-//     } else return 
-// } 
+
+    if(document.getElementById(column1[5]).style.backgroundColor != "red") {
+        document.getElementById(column1[5]).style.backgroundColor = "red"
+    } else if(document.getElementById(column1[5]).style.backgroundColor == "red"){
+        document.getElementById(column1[4]).style.backgroundColor = "red"
+        }     
+    }  
+
 let playerName1;
 let playerColor1;
+// This function takes input from the user to get their name and color
 document.getElementById('submit1').onclick = function(){
     if (document.getElementById('name1') != null){
         playerName1 = document.getElementById('name1').value
@@ -45,13 +52,14 @@ document.getElementById('submit1').onclick = function(){
             document.getElementById('label3').innerHTML = ("Player 1 Color: " + playerColor1)
                     document.getElementById('color1').remove()
                     document.getElementById('submit1').remove()
-                        player2.color = playerColor1
+                        player1.color = playerColor1
                                     console.log(player1)
     } else return 
 }
 
 let playerName2;
 let playerColor2;
+// This function takes input from the user to get their name and color
 document.getElementById('submit2').onclick = function(){
     if (document.getElementById('name2') != null){
         playerName2 = document.getElementById('name2').value
@@ -69,6 +77,8 @@ document.getElementById('submit2').onclick = function(){
     } else return 
 } 
 
+let currentPlayer;
+currentPlayer = player1;
 
 
     document.getElementById('move1').addEventListener('click',move1)
