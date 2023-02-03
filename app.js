@@ -17,6 +17,32 @@ const row6 = ["box43", "box44", "box45", "box46", "box47", "box48", "box49"];
 const rows = [row1,row2,row3,row4,row5,row6]
 console.log(rows)
 
+const diag1 = ["box49", "box41", "box33", "box25"];
+const diag2 = ["box41", "box33", "box25", "box17"];
+const diag3 = ["box33", "box25", "box17", "box9"];
+const diag4 = ["box48", "box40", "box32", "box24"];
+const diag5 = ["box40", "box32", "box24", "box16"];
+const diag6 = ["box32", "box24", "box16", "box8"];
+const diag7 = ["box47", "box39", "box31", "box23"];
+const diag8 = ["box39", "box31", "box23","box15"];
+const diag9 = ["box46", "box38", "box30","box22"];
+const diag10 = ["box46", "box40", "box34","box28"];
+const diag11 = ["box45", "box39", "box33","box27"];
+const diag12 = ["box39", "box33", "box27","box21"];
+const diag13 = ["box44", "box38", "box32","box26"];
+const diag14 = ["box38", "box32", "box26","box20"];
+const diag15 = ["box32", "box26","box20",'box14'];
+const diag16 = ["box43", "box37","box31",'box25'];
+const diag17 = ["box37", "box31","box25",'box19'];
+const diag18 = ["box31","box25",'box19','box13'];
+const diag19 = ["box36","box30",'box24','box18'];
+const diag20 = ["box30",'box24','box18','box12'];
+const diag21 = ["box42",'box34','box26','box18'];
+const diag22 = ['box34','box26','box18','box10'];
+const diag23 = ['box29','box23','box17','box11'];
+const diag24 = ['box35','box27','box19','box11'];
+const diagonals = [diag1, diag2,diag3,diag4,diag5,diag6,diag7,diag8,diag9,diag10,diag11,diag12,diag13,diag14,diag15,diag16,diag17,diag18,diag19,diag20,diag21,diag22,diag23,diag24]
+
 let player1 = {
     name: "",
     color: "",
@@ -218,7 +244,28 @@ document.getElementById('currentPlayer').innerHTML = currentPlayer.name
      
 // }
 // The above code beginning on Line 38 is the old horizontal solution...
-
+function checkForWinDiagonal(){
+    for (let i = 0; i < diagonals.length; i++) {
+        const space1 = diagonals[i][0];
+        const space2 = diagonals[i][1];
+        const space3 = diagonals[i][2];
+        const space4 = diagonals[i][3];
+        // console.log(space1)
+        // console.log(space2)
+        // console.log(space3)
+        // console.log(space4)
+        // console.log(space5)
+        // console.log(space6)
+        // console.log(space7)
+        if (document.getElementById(space1).style.backgroundColor == currentPlayer.color &&
+            document.getElementById(space2).style.backgroundColor == currentPlayer.color &&
+            document.getElementById(space3).style.backgroundColor == currentPlayer.color &&
+            document.getElementById(space4).style.backgroundColor == currentPlayer.color) 
+            {
+            alert(currentPlayer.name + " has won!")
+        }  
+    }
+}
 function checkForWinVertical(){
     for (let i = 0; i < rows.length; i++) {
         const space1 = rows[i][0];
@@ -339,6 +386,7 @@ function move1() {
     } else alert("No more moves can be made on this column.")
     checkForWinVertical();
     checkForWinHorizontal();
+    checkForWinDiagonal();
     return changeTurns();
 }
 function move2() {
@@ -358,6 +406,7 @@ function move2() {
     } else alert("No more moves can be made on this column.")
     checkForWinVertical();
     checkForWinHorizontal();
+    checkForWinDiagonal();
     return changeTurns();
 }
 function move3() {
@@ -377,6 +426,7 @@ function move3() {
     } else alert("No more moves can be made on this column.")
     checkForWinVertical();
     checkForWinHorizontal();
+    checkForWinDiagonal();
     return changeTurns();
 }
 function move4() {
@@ -396,6 +446,7 @@ function move4() {
     } else alert("No more moves can be made on this column.")
     checkForWinVertical();
     checkForWinHorizontal();
+    checkForWinDiagonal();
     return changeTurns();
 }
 function move5() {
@@ -415,6 +466,7 @@ function move5() {
     } else alert("No more moves can be made on this column.")
     checkForWinVertical();
     checkForWinHorizontal();
+    checkForWinDiagonal();
     return changeTurns();
 }
 function move6() {
@@ -434,6 +486,7 @@ function move6() {
     } else alert("No more moves can be made on this column.")
     checkForWinVertical();
     checkForWinHorizontal();
+    checkForWinDiagonal();
     return changeTurns();
 }
 function move7() {
@@ -454,6 +507,7 @@ function move7() {
     } else alert("No more moves can be made on this column.")
     checkForWinVertical();
     checkForWinHorizontal();
+    checkForWinDiagonal();
     return changeTurns();
 }
 
