@@ -8,130 +8,155 @@ const column7 = ["box14", "box21", "box28", "box35", "box42", "box49"]
 
 let player1 = {
     name: "",
-    color: "yellow"
+    color: ""
 }
 let player2 = {
     name: "",
-    color: "red"
+    color: ""
 }
+
+let currentPlayer = player1;
+document.getElementById('currentPlayer').innerHTML = currentPlayer.name
 
 player1.color = document.getElementById('color1').innerHTML
 player1.name = document.getElementById('color1')
 // document.getElementById("box8").style.backgroundColor = "red"
 
 // document.getElementById(column1[1]).style.backgroundColor = "red" either of these methods work to change the color
- 
+// function currentPlayer(){
+
+// } 
+function changeTurns() {
+    if (currentPlayer === player1) {
+        currentPlayer = player2;
+        document.getElementById('currentPlayer').innerHTML = currentPlayer.name;
+        alert("It is now " + currentPlayer.name + " turn!")
+    } else if (currentPlayer === player2) {
+        currentPlayer = player1;
+        document.getElementById('currentPlayer').innerHTML = currentPlayer.name;
+        alert("It is now " + currentPlayer.name + " turn!")
+    }
+}
+
 function move1() {
-      
-     if (document.getElementById(column1[5]).style.backgroundColor != player1.color | player2.color) {
-        document.getElementById(column1[5]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column1[4]).style.backgroundColor != player1.color) {
-        document.getElementById(column1[4]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column1[3]).style.backgroundColor != player1.color) {
-        document.getElementById(column1[3]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column1[2]).style.backgroundColor != player1.color) {
-        document.getElementById(column1[2]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column1[1]).style.backgroundColor != player1.color) {
-        document.getElementById(column1[1]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column1[0]).style.backgroundColor != player1.color) {
-        document.getElementById(column1[0]).style.backgroundColor = (player1.color)
-    } else alert("No more moves can be made on this column.")        
+
+    if (document.getElementById(column1[5]).style.backgroundColor != player1.color && document.getElementById(column1[5]).style.backgroundColor != player2.color) {
+        document.getElementById(column1[5]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column1[4]).style.backgroundColor != player1.color && document.getElementById(column1[4]).style.backgroundColor != player2.color) {
+        document.getElementById(column1[4]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column1[3]).style.backgroundColor != player1.color && document.getElementById(column1[3]).style.backgroundColor != player2.color) {
+        document.getElementById(column1[3]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column1[2]).style.backgroundColor != player1.color && document.getElementById(column1[2]).style.backgroundColor != player2.color) {
+        document.getElementById(column1[2]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column1[1]).style.backgroundColor != player1.color && document.getElementById(column1[1]).style.backgroundColor != player2.color) {
+        document.getElementById(column1[1]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column1[0]).style.backgroundColor != player1.color && document.getElementById(column1[0]).style.backgroundColor != player2.color) {
+        document.getElementById(column1[0]).style.backgroundColor = (currentPlayer.color)
+    } else alert("No more moves can be made on this column.")
+    return changeTurns();
 }
 function move2() {
-      
-     if (document.getElementById(column2[5]).style.backgroundColor != player1.color) {
-        document.getElementById(column2[5]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column2[4]).style.backgroundColor != player1.color) {
-        document.getElementById(column2[4]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column2[3]).style.backgroundColor != player1.color) {
-        document.getElementById(column2[3]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column2[2]).style.backgroundColor != player1.color) {
-        document.getElementById(column2[2]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column2[1]).style.backgroundColor != player1.color) {
-        document.getElementById(column2[1]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column2[0]).style.backgroundColor != player1.color) {
-        document.getElementById(column2[0]).style.backgroundColor = (player1.color)
-    } else alert("No more moves can be made on this column.")        
+
+    if (document.getElementById(column2[5]).style.backgroundColor != player1.color && document.getElementById(column2[5]).style.backgroundColor != player2.color) {
+        document.getElementById(column2[5]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column2[4]).style.backgroundColor != player1.color && document.getElementById(column2[4]).style.backgroundColor != player2.color) {
+        document.getElementById(column2[4]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column2[3]).style.backgroundColor != player1.color && document.getElementById(column2[3]).style.backgroundColor != player2.color) {
+        document.getElementById(column2[3]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column2[2]).style.backgroundColor != player1.color && document.getElementById(column2[2]).style.backgroundColor != player2.color) {
+        document.getElementById(column2[2]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column2[1]).style.backgroundColor != player1.color && document.getElementById(column2[1]).style.backgroundColor != player2.color) {
+        document.getElementById(column2[1]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column2[0]).style.backgroundColor != player1.color && document.getElementById(column2[0]).style.backgroundColor != player2.color) {
+        document.getElementById(column2[0]).style.backgroundColor = (currentPlayer.color)
+    } else alert("No more moves can be made on this column.")
+    return changeTurns();
 }
 function move3() {
-      
-     if (document.getElementById(column3[5]).style.backgroundColor != player1.color) {
-        document.getElementById(column3[5]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column3[4]).style.backgroundColor != player1.color) {
-        document.getElementById(column3[4]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column3[3]).style.backgroundColor != player1.color) {
-        document.getElementById(column3[3]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column3[2]).style.backgroundColor != player1.color) {
-        document.getElementById(column3[2]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column3[1]).style.backgroundColor != player1.color) {
-        document.getElementById(column3[1]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column3[0]).style.backgroundColor != player1.color) {
-        document.getElementById(column3[0]).style.backgroundColor = (player1.color)
-    } else alert("No more moves can be made on this column.")        
-}
+
+        if (document.getElementById(column3[5]).style.backgroundColor != player1.color && document.getElementById(column3[5]).style.backgroundColor != player2.color) {
+            document.getElementById(column3[5]).style.backgroundColor = (currentPlayer.color)
+        } else if (document.getElementById(column3[4]).style.backgroundColor != player1.color && document.getElementById(column3[4]).style.backgroundColor != player2.color) {
+            document.getElementById(column3[4]).style.backgroundColor = (currentPlayer.color)
+        } else if (document.getElementById(column3[3]).style.backgroundColor != player1.color && document.getElementById(column3[3]).style.backgroundColor != player2.color) {
+            document.getElementById(column3[3]).style.backgroundColor = (currentPlayer.color)
+        } else if (document.getElementById(column3[2]).style.backgroundColor != player1.color && document.getElementById(column3[2]).style.backgroundColor != player2.color) {
+            document.getElementById(column3[2]).style.backgroundColor = (currentPlayer.color)
+        } else if (document.getElementById(column3[1]).style.backgroundColor != player1.color && document.getElementById(column3[1]).style.backgroundColor != player2.color) {
+            document.getElementById(column3[1]).style.backgroundColor = (currentPlayer.color)
+        } else if (document.getElementById(column3[0]).style.backgroundColor != player1.color && document.getElementById(column3[0]).style.backgroundColor != player2.color) {
+            document.getElementById(column3[0]).style.backgroundColor = (currentPlayer.color)
+        } else alert("No more moves can be made on this column.")
+        return changeTurns();
+    }
 function move4() {
-      
-     if (document.getElementById(column4[5]).style.backgroundColor != player1.color) {
-        document.getElementById(column4[5]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column4[4]).style.backgroundColor != player1.color) {
-        document.getElementById(column4[4]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column4[3]).style.backgroundColor != player1.color) {
-        document.getElementById(column4[3]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column4[2]).style.backgroundColor != player1.color) {
-        document.getElementById(column4[2]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column4[1]).style.backgroundColor != player1.color) {
-        document.getElementById(column4[1]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column4[0]).style.backgroundColor != player1.color) {
-        document.getElementById(column4[0]).style.backgroundColor = (player1.color)
-    } else alert("No more moves can be made on this column.")        
+
+    if (document.getElementById(column4[5]).style.backgroundColor != player1.color && document.getElementById(column4[5]).style.backgroundColor != player2.color) {
+        document.getElementById(column4[5]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column4[4]).style.backgroundColor != player1.color && document.getElementById(column4[4]).style.backgroundColor != player2.color) {
+        document.getElementById(column4[4]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column4[3]).style.backgroundColor != player1.color && document.getElementById(column4[3]).style.backgroundColor != player2.color) {
+        document.getElementById(column4[3]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column4[2]).style.backgroundColor != player1.color && document.getElementById(column4[2]).style.backgroundColor != player2.color) {
+        document.getElementById(column4[2]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column4[1]).style.backgroundColor != player1.color && document.getElementById(column4[1]).style.backgroundColor != player2.color) {
+        document.getElementById(column4[1]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column4[0]).style.backgroundColor != player1.color && document.getElementById(column4[0]).style.backgroundColor != player2.color) {
+        document.getElementById(column4[0]).style.backgroundColor = (currentPlayer.color)
+    } else alert("No more moves can be made on this column.")
+    return changeTurns();
 }
 function move5() {
-      
-     if (document.getElementById(column5[5]).style.backgroundColor != player1.color) {
-        document.getElementById(column5[5]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column5[4]).style.backgroundColor != player1.color) {
-        document.getElementById(column5[4]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column5[3]).style.backgroundColor != player1.color) {
-        document.getElementById(column5[3]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column5[2]).style.backgroundColor != player1.color) {
-        document.getElementById(column5[2]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column5[1]).style.backgroundColor != player1.color) {
-        document.getElementById(column5[1]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column5[0]).style.backgroundColor != player1.color) {
-        document.getElementById(column5[0]).style.backgroundColor = (player1.color)
-    } else alert("No more moves can be made on this column.")        
-} 
+
+    if (document.getElementById(column5[5]).style.backgroundColor != player1.color && document.getElementById(column5[5]).style.backgroundColor != player2.color) {
+        document.getElementById(column5[5]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column5[4]).style.backgroundColor != player1.color && document.getElementById(column5[4]).style.backgroundColor != player2.color) {
+        document.getElementById(column5[4]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column5[3]).style.backgroundColor != player1.color && document.getElementById(column5[3]).style.backgroundColor != player2.color) {
+        document.getElementById(column5[3]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column5[2]).style.backgroundColor != player1.color && document.getElementById(column5[2]).style.backgroundColor != player2.color) {
+        document.getElementById(column5[2]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column5[1]).style.backgroundColor != player1.color && document.getElementById(column5[1]).style.backgroundColor != player2.color) {
+        document.getElementById(column5[1]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column5[0]).style.backgroundColor != player1.color && document.getElementById(column5[0]).style.backgroundColor != player2.color) {
+        document.getElementById(column5[0]).style.backgroundColor = (currentPlayer.color)
+    } else alert("No more moves can be made on this column.")
+    return changeTurns();
+}
 function move6() {
-      
-     if (document.getElementById(column6[5]).style.backgroundColor != player1.color) {
-        document.getElementById(column6[5]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column6[4]).style.backgroundColor != player1.color) {
-        document.getElementById(column6[4]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column6[3]).style.backgroundColor != player1.color) {
-        document.getElementById(column6[3]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column6[2]).style.backgroundColor != player1.color) {
-        document.getElementById(column6[2]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column6[1]).style.backgroundColor != player1.color) {
-        document.getElementById(column6[1]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column6[0]).style.backgroundColor != player1.color) {
-        document.getElementById(column6[0]).style.backgroundColor = (player1.color)
-    } else alert("No more moves can be made on this column.")        
+
+    if (document.getElementById(column6[5]).style.backgroundColor != player1.color && document.getElementById(column6[5]).style.backgroundColor != player2.color) {
+        document.getElementById(column6[5]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column6[4]).style.backgroundColor != player1.color && document.getElementById(column6[4]).style.backgroundColor != player2.color) {
+        document.getElementById(column6[4]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column6[3]).style.backgroundColor != player1.color && document.getElementById(column6[3]).style.backgroundColor != player2.color) {
+        document.getElementById(column6[3]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column6[2]).style.backgroundColor != player1.color && document.getElementById(column6[2]).style.backgroundColor != player2.color) {
+        document.getElementById(column6[2]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column6[1]).style.backgroundColor != player1.color && document.getElementById(column6[1]).style.backgroundColor != player2.color) {
+        document.getElementById(column6[1]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column6[0]).style.backgroundColor != player1.color && document.getElementById(column6[0]).style.backgroundColor != player2.color) {
+        document.getElementById(column6[0]).style.backgroundColor = (currentPlayer.color)
+    } else alert("No more moves can be made on this column.")
+    return changeTurns();
 }
 function move7() {
-      
-     if (document.getElementById(column7[5]).style.backgroundColor != player1.color) {
-        document.getElementById(column7[5]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column7[4]).style.backgroundColor != player1.color) {
-        document.getElementById(column7[4]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column7[3]).style.backgroundColor != player1.color) {
-        document.getElementById(column7[3]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column7[2]).style.backgroundColor != player1.color) {
-        document.getElementById(column7[2]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column7[1]).style.backgroundColor != player1.color) {
-        document.getElementById(column7[1]).style.backgroundColor = (player1.color)
-    } else if (document.getElementById(column7[0]).style.backgroundColor != player1.color) {
-        document.getElementById(column7[0]).style.backgroundColor = (player1.color)
-    } else alert("No more moves can be made on this column.")        
+
+    if (document.getElementById(column7[5]).style.backgroundColor != player1.color && document.getElementById(column7[5]).style.backgroundColor != player2.color) {
+        document.getElementById(column7[5]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column7[4]).style.backgroundColor != player1.color && document.getElementById(column7[4]).style.backgroundColor != player2.color) {
+        document.getElementById(column7[4]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column7[3]).style.backgroundColor != player1.color && document.getElementById(column7[3]).style.backgroundColor != player2.color) {
+        document.getElementById(column7[3]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column7[2]).style.backgroundColor != player1.color && document.getElementById(column7[2]).style.backgroundColor != player2.color) {
+        document.getElementById(column7[2]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column7[1]).style.backgroundColor != player1.color && document.getElementById(column7[1]).style.backgroundColor != player2.color) {
+        document.getElementById(column7[1]).style.backgroundColor = (currentPlayer.color)
+    } else if (document.getElementById(column7[0]).style.backgroundColor != player1.color && document.getElementById(column7[0]).style.backgroundColor != player2.color) {
+        document.getElementById(column7[0]).style.backgroundColor = (currentPlayer.color)
+        alert("No more moves can be made on this column!")
+    } else alert("No more moves can be made on this column.")
+    return changeTurns();
 }
 
 let playerName1;
@@ -173,8 +198,7 @@ document.getElementById('submit2').onclick = function () {
     } else return
 }
 
-let currentPlayer;
-currentPlayer = player1;
+
 
 
 document.getElementById('move1').addEventListener('click', move1)
