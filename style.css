@@ -94,7 +94,10 @@ html {
 } 
 
 #currentPlayer{
-    font-size: 20px;
+    font-size: 25px;
+    color: black;
+    display: flex;
+    justify-content: center;
 }
 /* .box9 {
     background-color: red;
