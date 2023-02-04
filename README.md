@@ -1,5 +1,6 @@
 # Project1-Connect4-Clone
-
+![0922f93c-b901-405b-9265-38cc7d434f3a sketchpad](https://user-images.githubusercontent.com/117129130/216774608-4ec66b65-9c11-4e68-b0e9-4b886f3fced8.png)
+![0922f93c-b901-405b-9265-38cc7d434f3a sketchpad](https://user-images.githubusercontent.com/117129130/216774613-13fc537a-6c47-43a9-81bf-cb068f3266d3.png)
 This project is a connect 4 clone, and is my first official game that I have built from scratch. 
 
 The goal of the game is get 4 of your own pieces in a sequence -> diagonally, horizontally, or vertically.
@@ -9,7 +10,6 @@ Project Description
 
 
 I wanted to make a connect 4 clone. It will function the same way as the original game with any 4 connecting dots horizontally, diagonally, vertically winning the player the game. It will be a two player game and it will switch turns and indicate who's turn it is on the screen with a visual indicator saying it is "player... turn" and their color piece showing.
-
 
 User Stories
 Add user stories following the As a [type of user], I want [what the user wants], so that [what it helps accomplish] format. Read more about user stories here.
