@@ -53,9 +53,11 @@ let player2 = {
     color: "",
     score: 0
 }
+document.getElementById('label7').innerHTML = "Player 1 Score:" + player1.score;
+document.getElementById('label6').innerHTML = "Player 2 Score:" + player2.score;
 
-let currentPlayer = player1;
-document.getElementById('currentPlayer').innerHTML = currentPlayer.name
+// let currentPlayer = player1;
+// document.getElementById('currentPlayer').innerHTML = currentPlayer.name
 
 // player1.color = document.getElementById('color1').innerHTML
 // player1.name = document.getElementById('color1')
@@ -244,6 +246,7 @@ document.getElementById('currentPlayer').innerHTML = currentPlayer.name
      
 // }
 // The above code beginning on Line 38 is the old horizontal solution...
+
 function checkForWinDiagonal(){
     for (let i = 0; i < diagonals.length; i++) {
         const space1 = diagonals[i][0];
@@ -262,10 +265,15 @@ function checkForWinDiagonal(){
             document.getElementById(space3).style.backgroundColor == currentPlayer.color &&
             document.getElementById(space4).style.backgroundColor == currentPlayer.color) 
             {
+            currentPlayer.score++
+            document.getElementById('label7').innerHTML = "Player 1 Score:" + player1.score;
+            document.getElementById('label6').innerHTML = "Player 2 Score:" + player2.score;
             alert(currentPlayer.name + " has won!")
+            console.log(currentPlayer)
         }  
     }
 }
+
 function checkForWinVertical(){
     for (let i = 0; i < rows.length; i++) {
         const space1 = rows[i][0];
@@ -288,6 +296,10 @@ function checkForWinVertical(){
             document.getElementById(space4).style.backgroundColor == currentPlayer.color) 
             {
             alert(currentPlayer.name + " has won!")
+            currentPlayer.score++
+            document.getElementById('label7').innerHTML = "Player 1 Score:" + player1.score;
+            document.getElementById('label6').innerHTML = "Player 2 Score:" + player2.score;
+            console.log(currentPlayer)
         } else if (
             document.getElementById(space2).style.backgroundColor == currentPlayer.color &&
             document.getElementById(space3).style.backgroundColor == currentPlayer.color &&
@@ -295,6 +307,10 @@ function checkForWinVertical(){
             document.getElementById(space5).style.backgroundColor == currentPlayer.color) 
             {
             alert(currentPlayer.name + " has won")
+            currentPlayer.score++
+            document.getElementById('label7').innerHTML = "Player 1 Score:" + player1.score;
+            document.getElementById('label6').innerHTML = "Player 2 Score:" + player2.score;
+            console.log(currentPlayer)
         }  else if (
             document.getElementById(space3).style.backgroundColor == currentPlayer.color &&
             document.getElementById(space4).style.backgroundColor == currentPlayer.color &&
@@ -302,6 +318,10 @@ function checkForWinVertical(){
             document.getElementById(space6).style.backgroundColor == currentPlayer.color) 
             {
             alert(currentPlayer.name + " has won")
+            currentPlayer.score++
+            document.getElementById('label7').innerHTML = "Player 1 Score:" + player1.score;
+            document.getElementById('label6').innerHTML = "Player 2 Score:" + player2.score;
+            console.log(currentPlayer)
         }  else if (
             document.getElementById(space4).style.backgroundColor == currentPlayer.color &&
             document.getElementById(space5).style.backgroundColor == currentPlayer.color &&
@@ -309,6 +329,10 @@ function checkForWinVertical(){
             document.getElementById(space7).style.backgroundColor == currentPlayer.color) 
             {
             alert(currentPlayer.name + " has won")
+            currentPlayer.score++
+            document.getElementById('label7').innerHTML = "Player 1 Score:" + player1.score;
+            document.getElementById('label6').innerHTML = "Player 2 Score:" + player2.score;
+            console.log(currentPlayer)
         }  
     }
 }
@@ -333,6 +357,10 @@ function checkForWinHorizontal() {
                     document.getElementById(space4).style.backgroundColor == currentPlayer.color) 
                     {
                     alert(currentPlayer.name + " has won!")
+                    currentPlayer.score++
+                document.getElementById('label7').innerHTML = "Player 1 Score:" + player1.score;
+                document.getElementById('label6').innerHTML = "Player 2 Score:" + player2.score;
+                    console.log(currentPlayer)
                 } else if (
                     document.getElementById(space2).style.backgroundColor == currentPlayer.color &&
                     document.getElementById(space3).style.backgroundColor == currentPlayer.color &&
@@ -340,6 +368,10 @@ function checkForWinHorizontal() {
                     document.getElementById(space5).style.backgroundColor == currentPlayer.color) 
                     {
                     alert(currentPlayer.name + " has won")
+                    currentPlayer.score++
+                document.getElementById('label7').innerHTML = "Player 1 Score:" + player1.score;
+                document.getElementById('label6').innerHTML = "Player 2 Score:" + player2.score;
+                    console.log(currentPlayer)
                 } else if 
                     (document.getElementById(space3).style.backgroundColor == currentPlayer.color &&
                     document.getElementById(space4).style.backgroundColor == currentPlayer.color &&
@@ -347,6 +379,10 @@ function checkForWinHorizontal() {
                     document.getElementById(space6).style.backgroundColor == currentPlayer.color) 
                     {
                     alert(currentPlayer.name + " has won")
+                    currentPlayer.score++
+                document.getElementById('label7').innerHTML = "Player 1 Score:" + player1.score;
+                document.getElementById('label6').innerHTML = "Player 2 Score:" + player2.score;
+                    console.log(currentPlayer)
                 } 
             }
 }
@@ -355,11 +391,11 @@ function changeTurns() {
     if (currentPlayer === player1) {
         currentPlayer = player2;
         document.getElementById('currentPlayer').innerHTML = currentPlayer.name;
-        alert("It is now " + currentPlayer.name + " turn!")
+        // alert("It is now " + currentPlayer.name + " turn!")
     } else if (currentPlayer === player2) {
         currentPlayer = player1;
         document.getElementById('currentPlayer').innerHTML = currentPlayer.name;
-        alert("It is now " + currentPlayer.name + " turn!")
+        // alert("It is now " + currentPlayer.name + " turn!")
     }
 }
 
@@ -510,7 +546,28 @@ function move7() {
     checkForWinDiagonal();
     return changeTurns();
 }
-
+function startGame(){
+  let player = prompt("Who is going to go first?","P1 or P2?") 
+  if (player == "P1"){
+    currentPlayer = player1;
+        document.getElementById('currentPlayer').innerHTML = currentPlayer.name;
+  } else if (player = "P2"){
+    currentPlayer = player2;
+        document.getElementById('currentPlayer').innerHTML = currentPlayer.name;
+  } else alert("The input didn't work, you may try again but Player 1 will start") 
+  currentPlayer = player1;
+  document.getElementById('currentPlayer').innerHTML = currentPlayer.name;
+}
+function resetGame(){
+    for(let i = 0; i < columns.length; i++){
+        document.getElementById(columns[i][0]).style.backgroundColor = "white"
+        document.getElementById(columns[i][1]).style.backgroundColor = "white"
+        document.getElementById(columns[i][2]).style.backgroundColor = "white"
+        document.getElementById(columns[i][3]).style.backgroundColor = "white"
+        document.getElementById(columns[i][4]).style.backgroundColor = "white"
+        document.getElementById(columns[i][5]).style.backgroundColor = "white"
+    }
+}
 let playerName1;
 let playerColor1;
 // This function takes input from the user to get their name and color
@@ -560,3 +617,7 @@ document.getElementById('move4').addEventListener('click', move4)
 document.getElementById('move5').addEventListener('click', move5)
 document.getElementById('move6').addEventListener('click', move6)
 document.getElementById('move7').addEventListener('click', move7)
+document.getElementById('play').addEventListener('click', startGame)
+document.getElementById('play2').addEventListener('click', resetGame)
+
+

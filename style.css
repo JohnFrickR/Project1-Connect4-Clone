@@ -1,11 +1,13 @@
 .head {
-    border: solid 5px;
+    /* border: solid 5px; */
     display: flex;
     justify-content: center;
+    background-color: black;
+    color: white;
 }
 
 .title {
-    border: solid 1px;
+    /* border: solid 1px; */
     margin: 10px;
     font-size: xx-large;
     font-style: italic;
@@ -15,6 +17,13 @@
     border: solid 2px;
     margin: 10px;
     font-size: x-large;
+}
+.play2 {
+    border: solid 1px;
+    margin: 1px;
+    font-size: large;
+    position: relative;
+    left: 17px;
 }
 
 .rules {
@@ -29,6 +38,7 @@
     justify-content: center;
     flex-direction: column;
     max-width: 20%;
+    background-color: beige;
 }
 .P1{
     display: flex;
@@ -47,6 +57,7 @@
     flex-direction: column;
     max-width: 20%;
     position: relative;
+    background-color: beige;
     /* left: 1200px;
     bottom: 50px; */
 }
@@ -84,7 +95,7 @@
 }
 
 html {
-    background-color: lightblue;
+    background-image:url("https://images.unsplash.com/photo-1616935146434-16975bb996fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1083&q=80") ;
 }
 
 #player-boxes {
@@ -98,6 +109,11 @@ html {
     color: black;
     display: flex;
     justify-content: center;
+    background-color: beige;
+}
+#currentPlayer-box{
+    border: solid 1px;
+    background-color: beige;
 }
 /* .box9 {
     background-color: red;
