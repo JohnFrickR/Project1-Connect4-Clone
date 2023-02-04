@@ -568,6 +568,11 @@ function resetGame(){
         document.getElementById(columns[i][5]).style.backgroundColor = "white"
     }
 }
+function displayRules(){
+    alert("Enter Player1 and Player2 information you desire. Then hit Start game to choose who begins the game.")
+    alert("In order to win you must place 4 pieces of your color in any direction. Each players pieces can block the other from winning.")
+    alert("Once someone wins, simply hit the restart game button and it will clean off the board.")
+}
 let playerName1;
 let playerColor1;
 // This function takes input from the user to get their name and color
@@ -619,5 +624,6 @@ document.getElementById('move6').addEventListener('click', move6)
 document.getElementById('move7').addEventListener('click', move7)
 document.getElementById('play').addEventListener('click', startGame)
 document.getElementById('play2').addEventListener('click', resetGame)
+document.getElementById('rules').addEventListener('click', displayRules)
 
 
